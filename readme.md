@@ -38,36 +38,36 @@
 
 <h3>Login:</h3><br>
 
-![Screenshot](../sistema_assistencia_social_flask/capturas/login.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/login.PNG)
 
 <br>
 
 <h3>Início / Menu:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/inicio_menu.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/inicio_menu.PNG)
 
 <br>
 
 <h3>Cadastro assistido:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/cadastrar_assistido.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/cadastrar_assistido.png)
 
 <br>
 
 <h3>Pesquisar assistido:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/pesquisar_assistido.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/pesquisar_assistido.png)
 
 <br>
 
 <h3>Agendamento:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/agendamento.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/agendamento.png)
 
 <br>
 
 <h3>Sobre</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/sobre.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/sobre.png)
 
 <br>
