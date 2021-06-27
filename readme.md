@@ -50,24 +50,24 @@
 
 <h3>Cadastro assistido:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/cadastrar_assistido.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/cadastrar_assistido.PNG)
 
 <br>
 
 <h3>Pesquisar assistido:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/pesquisar_assistido.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/pesquisar_assistido.PNG)
 
 <br>
 
 <h3>Agendamento:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/agendamento.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/agendamento.PNG)
 
 <br>
 
 <h3>Sobre</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/sobre.png)
+![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/blob/main/capturas/sobre.PNG)
 
 <br>
