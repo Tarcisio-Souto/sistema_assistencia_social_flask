@@ -38,7 +38,7 @@
 
 <h3>Login:</h3><br>
 
-![Screenshot](https://github.com/Tarcisio-Souto/sistema_assistencia_social_flask/tree/main/capturas/login.png)
+![Screenshot](../sistema_assistencia_social_flask/capturas/login.png)
 
 <br>
 
