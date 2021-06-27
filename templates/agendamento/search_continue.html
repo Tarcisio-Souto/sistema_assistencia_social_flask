@@ -1,0 +1,24 @@
+<div class="container-fluid" id='pesq_agendamentos'>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table table-sm">
+                <thead align="center">
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data Agendamento</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody align="center">                                                    
+                  <tr>
+                    <td>{{ sql_pesq['nome'] }}</td>
+                    <td>{{ sql_pesq['data_agendamento'] }}</td>
+                    <td>{{ sql_pesq['status'] }}</td>
+                  </tr>                                                   
+                </tbody>
+              </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>    
+</div>

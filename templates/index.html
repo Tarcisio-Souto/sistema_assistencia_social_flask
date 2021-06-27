@@ -1,0 +1,26 @@
+<!-- Corrige o erro do favicon.ico -->
+
+<link rel="icon" href="data:;base64,=">
+
+{% block content %}
+    <h1>{% block title %} Resultado da pesquisa {% endblock %}</h1>
+
+    {% for func in func %}        
+        <span class="badge badge-primary">{{ func['nome_func'] }}</span>
+        <span class="badge badge-primary">{{ func['nome'] }}</span>
+        <span class="badge badge-primary">{{ func['data_agendamento'] }}</span>
+        <span class="badge badge-primary">{{ func['hora_inicio'] }}</span>
+        <span class="badge badge-primary">{{ func['hora_fim'] }}</span>
+        <span class="badge badge-primary">{{ func['status'] }}</span>
+        <span class="badge badge-primary">{{ func['observacao'] }}</span>
+        <!--<span class="badge badge-primary">{{ func['nome_mae'] }}</span>
+        <span class="badge badge-primary">{{ func['nome_pai'] }}</span>
+        <span class="badge badge-primary">{{ func['nome_responsavel'] }}</span>
+        <span class="badge badge-primary">{{ func['telefone_recado'] }}</span>
+        <span class="badge badge-primary">{{ func['telefone1'] }}</span>
+        <span class="badge badge-primary">{{ func['dt_cadastro'] }}</span>
+        <span class="badge badge-primary">{{ func['hr_cadastro'] }}</span>
+        <span class="badge badge-primary">{{ func['fk_endereco'] }}</span>-->
+        <hr>
+    {% endfor %}
+{% endblock %}

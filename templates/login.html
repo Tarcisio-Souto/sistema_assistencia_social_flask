@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Corrige o erro do favicon.ico -->
+
+    <link rel="icon" href="data:;base64,=">
+
+    <title>Serviço Social - AMAES</title>
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src='/static/javascript/jquery.3.5.1.js'></script>
+
+    <!-- Ajax -->
+    <script type="text/javascript" src='/static/javascript/funcoesAjax.js'></script>
+
+    <!-- JQuery Mask -->
+    <script type="text/javascript" src='/static/javascript/jquery.mask.min.js'></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/style/style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/3d7779fa7f.js" crossorigin="anonymous"></script>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src='/static/javascript/funcoes.js'></script>
+
+    <script>
+
+        /* Essa função foi necessária p/ que o login do funcionário seja
+       possível através da tecla 'Enter' já que não há 'submit' */
+
+        $(document).keypress(function (e) {
+
+            if (e.which == 13) {
+                setLogin();
+            }
+
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 img-login-amaes" align='center'>
+                    <img class="img-fluid" src="{{ url_for('static', filename='/images/amaes.png') }}" width="30px">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+           <div id="login-row" class="row justify-content-center align-items-center">
+                <div class="col-md-4"></div>
+                <div id="login-column" class="col-md-4">
+                    <div id="login-box" class="col-md-12"><br>
+                        <h3 id ="bem2" class="text-center text-info">Login</h3><br>
+                        <p id ="bem3" class="text-info">Seja bem-vindo,</p>
+                        <br>
+                        <p id ="bem4" class=" text-info">Identifique-se abaixo para acessar o Sistema da AMAES.</p>
+                        
+                        <!-- Mensagens Cadastro Funcionário -->
+                        <p id="errorAlertLogin" role="alert" style="display: none"></p>
+
+                        <form id="login-form" class="form" action="" method="POST">
+                            <div class="form-group">
+                                <i class="fas fa-user-friends"></i>
+                                <label for="cpf"  id ="bem" class="text-info"> CPF:</label><br>
+                                <input type="text" name="txtCpf" id="txtCpf" class="form-control glyphicon glyphicon-user required_login">
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-unlock-alt"></i>
+                                <label for="password"  id ="bem" class="text-info"> Senha:</label><br>
+                                <input type="password" name="txtPassword" id="txtPassword" class="form-control required_login">
+                            </div><br>
+                            <div class="form-group">
+                                <input type="button" name="btnLogin" id="btn-login" class="btn btn-info" value="Entrar" onclick="setLogin();">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

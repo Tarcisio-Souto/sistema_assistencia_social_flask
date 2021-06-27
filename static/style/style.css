@@ -1,0 +1,516 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #7386D5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+.fa-home {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-child {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-user-tie {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-calendar-alt {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-address-book {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-info-circle {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+.fa-sign-out-alt {
+    position: relative;
+    right: 12px !important;
+    margin-left: 20px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px 10%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;    
+}
+
+#logo {
+    text-align: center;
+}
+
+.img-fluid {
+    position: relative;
+    right: 10px;
+}
+
+/* ---------------------------------------------------
+    REGISTER ASSISTIDO
+----------------------------------------------------- */
+
+#form-add-user{
+    background-color: #7386D5;
+    padding: 25px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+#btn_acao{
+    float: right;
+    margin-right: 0;    
+}
+
+.btn-danger{
+    margin-right: 10px !important;
+}
+
+form label {
+    font-weight: bold;
+}
+
+#titulo_pagina1{
+    position: relative;
+    top: 7px;
+}
+
+#titulo_pagina2{
+    position: relative;
+    top: 0;
+    margin-right: 15px !important;
+}
+
+#successAlertAssistido {
+    background-color: #55b16c;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+}
+
+#errorAlertAssistido {
+    background-color: #da543c;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+}
+
+
+/* ---------------------------------------------------
+    SEARCH ASSISTIDO
+----------------------------------------------------- */
+
+#resultado_pesquisa {
+
+    position: relative;
+    top: 50px;
+    margin-bottom: 100px;
+    background-color: #7386D5;
+    padding: 25px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* ---------------------------------------------------
+    REGISTER FUNCIONÁRIO
+----------------------------------------------------- */
+
+#successAlert {
+    background-color: #55b16c;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+}
+
+#errorAlert {
+    background-color: #55b16c;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+
+/* ---------------------------------------------------
+    REGISTER PRONTUÁRIO
+----------------------------------------------------- */
+
+
+#aba_prontuario{
+    cursor: pointer;
+}
+
+#aba_anamnese{
+    cursor: pointer;
+}
+
+.nav-link{
+    background-color:white;
+}
+
+.nav-link:hover{
+    background-color: rgb(194, 194, 194);
+}
+
+#section-prontuario{
+    background-color: #7386D5;
+    padding: 25px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+#form-add-prontuario label{
+    text-align: left;
+}
+
+#form-add-prontuario textarea{
+    height: 93%;
+    margin-bottom: 14px;    
+}
+
+#prontuario{
+    display: block;
+}
+
+#anamnese{
+    display: none;
+}
+
+#imc input{
+    position: relative;
+    top: 7px !important;
+}
+
+/* ---------------------------------------------------
+    REGISTER ATENDIMENTO
+----------------------------------------------------- */
+
+#form-add-record{
+    background-color: #7386D5;
+    padding: 25px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+#form-add-record select{
+    width: 94%;
+}
+
+.btn-agendamento button{
+    /*position: relative;
+    top: 50px;*/
+    float: right;
+    margin-right: 13px !important;
+    position: relative;
+    top: 150px !important;
+
+}
+
+.input-group-prepend {
+    cursor: pointer;
+}
+
+.input-group-prepend:hover {
+    opacity: 85%;
+}
+
+
+/* ---------------------------------------------------
+    SEARCH AGENDAMENTO
+----------------------------------------------------- */
+
+#todos_agendamentos {
+    position: relative;
+    top: 60px;
+}
+
+#todos_agendamentos table thead {
+    background-color: #7386D5;
+
+}
+
+#todos_agendamentos table {
+    background-color: #cccccc;
+}
+
+
+#pesq_agendamentos {
+    position: relative;
+    top: 60px;
+}
+
+#pesq_agendamentos table thead {
+    background-color: #7386D5;
+}
+
+#pesq_agendamentos table {
+    background-color: #cccccc;
+}
+
+/* ---------------------------------------------------
+    SEARCH ASSISTIDO
+----------------------------------------------------- */
+
+#sect-pesq-assitido{
+    background-color: #7386D5;
+    padding: 35px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+#form-pesq-assistido{
+    position: relative;
+    margin-left: 40px;    
+}
+
+/* ---------------------------------------------------
+    SEARCH FUNCIONARIO
+----------------------------------------------------- */
+
+#sect-pesq-funcionario{
+    background-color: #7386D5;
+    padding: 35px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+#form-pesq-funcionario{
+    position: relative;
+    margin-left: 40px;    
+}
+
+
+/* ---------------------------------------------------
+    SOBRE
+----------------------------------------------------- */
+
+.quem-somos{
+    background-color: #7386D5;
+    padding: 40px 0;
+    box-shadow: 12px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.quem-somos p{
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    top: 7px;
+    color: black;
+}
+
+.descricao-empresa{
+    top: 50px;
+    box-shadow: 12px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+}
+
+.descricao-empresa p{
+    text-align: justify;
+    color: #4d5b63;
+}
+
+.funcoes-sistema{
+    position: relative;
+    top: 100px;
+    margin-bottom: 200px;
+}
+
+.funcoes-sistema p{
+    color: #4d5b63;
+}
+
+.funcoes-sistema ul li{
+    text-align: left;
+    margin-left: 85px;
+    color: #4d5b63;
+}

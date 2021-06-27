@@ -1,0 +1,262 @@
+<div id='resultado_pesquisa' class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form id='form_cad_assistido' method="POST">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control required_assistido" id="txtNome"
+                            value="{{ sql_pesq['nome'] }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nome Mãe:</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control required_assistido" id="txtNomeMae"
+                            value="{{ sql_pesq['nome_mae'] }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nome Pai:</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control required_assistido" id="txtNomePai"
+                            value="{{ sql_pesq['nome_pai'] }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Responsavel:</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control required_assistido" id="txtNomeResponsavel"
+                            value="{{ sql_pesq['nome_responsavel'] }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">CPF:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtCpf"
+                                    value="{{ sql_pesq['cpf'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">RG:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtRg"
+                                    value="{{ sql_pesq['rg'] }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="inputPassword3" class="col-md-12 col-form-label">Data de
+                                Nascimento:</label>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control required_assistido" id="txtDataNasc"
+                                    value="{{ sql_pesq['data_nasc'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPassword3" class="col-md-12 col-form-label">Idade:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtIdade"
+                                    onmouseover="calculaIdade();" value="{{ sql_pesq['idade'] }}" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-auto my-1">
+                                <label class="mr-sm-2" for="selectCargo">Sexo:</label>
+                                <select class="custom-select mr-sm-2 required_assistido" name='selectSexo'
+                                    id="selectSexo">
+                                    <option selected disabled>{{ sql_pesq['sexo'] }}</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Celular:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtCelular"
+                                    placeholder="(27) 99999-9999" value="{{ sql_pesq['telefone1'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPassword3" class="col-md-12 col-form-label">Recado:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtRecado"
+                                    placeholder="(27) 3322-9096" value="{{ sql_pesq['telefone_recado'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Cert. Nascimento:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtCertidaoNasc"
+                                    value="{{ sql_pesq['cert_nasc'] }}">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Logradouro:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtLogradouro"
+                                    value="{{ sql_pesq['logradouro'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Número:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtNumero"
+                                    value="{{ sql_pesq['numero'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Bairro:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtBairro"
+                                    value="{{ sql_pesq['bairro'] }}">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-auto my-1">
+                                <label class="mr-sm-2" for="selectCargo">Município:</label>
+                                <select class="custom-select mr-sm-2 required_assistido"
+                                    name='txtMunicipio' id="txtMunicipio">
+                                    <option selected disabled>{{ sql_pesq['sexo'] }}</option>
+                                    <option value="Afonso Cláudio">Afonso Cláudio</option>
+                                    <option value="Água Doce do Norte">Água Doce do Norte</option>
+                                    <option value="Águia Branca">Águia Branca</option>
+                                    <option value="Alegre">Alegre</option>
+                                    <option value="Alfredo Chaves">Alfredo Chaves</option>
+                                    <option value="Alto Rio Novo">Alto Rio Novo</option>
+                                    <option value="Anchieta">Anchieta</option>
+                                    <option value="Apiacá">Apiacá</option>
+                                    <option value="Aracruz">Aracruz</option>
+                                    <option value="Atílio Vivacqua">Atílio Vivacqua</option>
+                                    <option value="Baixo Guandu">Baixo Guandu</option>
+                                    <option value="Barra de São Francisco">Barra de São Francisco</option>
+                                    <option value="Boa Esperança">Boa Esperança</option>
+                                    <option value="Bom Jesus do Norte">Bom Jesus do Norte</option>
+                                    <option value="Brejetuba">Brejetuba</option>
+                                    <option value="Cachoeiro de Itapemirim">Cachoeiro de Itapemirim</option>
+                                    <option value="Cariacica">Cariacica</option>
+                                    <option value="Castelo">Castelo</option>
+                                    <option value="Colatina">Colatina</option>
+                                    <option value="Conceicão da Barra">Conceicão da Barra</option>
+                                    <option value="Conceição do Castelo">Conceição do Castelo</option>
+                                    <option value="Divino de São Lourenço">Divino de São Lourenço</option>
+                                    <option value="Domingos Martins">Domingos Martins</option>
+                                    <option value="Dores do Rio Preto">Dores do Rio Preto</option>
+                                    <option value="Ecoporanga">Ecoporanga</option>
+                                    <option value="Fundão">Fundão</option>
+                                    <option value="Guaçuí">Guaçuí</option>
+                                    <option value="Guarapari">Guarapari</option>
+                                    <option value="Ibatiba">Ibatiba</option>
+                                    <option value="Ibiraçú">Ibiraçú</option>
+                                    <option value="Ibitirama">Ibitirama</option>
+                                    <option value="Iconha">Iconha</option>
+                                    <option value="Irupi">Irupi</option>
+                                    <option value="Itaguaçu">Itaguaçu</option>
+                                    <option value="Itapemirim">Itapemirim</option>
+                                    <option value="Itarana">Itarana</option>
+                                    <option value="Iúna">Iúna</option>
+                                    <option value="Jaguaré">Jaguaré</option>
+                                    <option value="Jerônimo Monteiro">Jerônimo Monteiro</option>
+                                    <option value="João Neiva">João Neiva</option>
+                                    <option value="Laranja da Terra">Laranja da Terra</option>
+                                    <option value="Linhares">Linhares</option>
+                                    <option value="Mantenópolis">Mantenópolis</option>
+                                    <option value="Marataízes">Marataízes</option>
+                                    <option value="Marechal Floriano">Marechal Floriano</option>
+                                    <option value="Marilândia">Marilândia</option>
+                                    <option value="Mimoso do Sul">Mimoso do Sul</option>
+                                    <option value="Montanha">Montanha</option>
+                                    <option value="Mucuriri">Mucuriri</option>
+                                    <option value="Muniz Freire">Muniz Freire</option>
+                                    <option value="Muqui">Muqui</option>
+                                    <option value="Nova Venécia">Nova Venécia</option>
+                                    <option value="Pancas">Pancas</option>
+                                    <option value="Pedro Canário">Pedro Canário</option>
+                                    <option value="Pinheiros">Pinheiros</option>
+                                    <option value="Piúma">Piúma</option>
+                                    <option value="Ponto Belo">Ponto Belo</option>
+                                    <option value="Presidente Kennedy">Presidente Kennedy</option>
+                                    <option value="Rio Bananal">Rio Bananal</option>
+                                    <option value="Rio Novo do Sul">Rio Novo do Sul</option>
+                                    <option value="Santa Leopoldina">Santa Leopoldina</option>
+                                    <option value="Santa Maria de Jetiba">Santa Maria de Jetiba</option>
+                                    <option value="Santa Teresa">Santa Teresa</option>
+                                    <option value="São Domingos do Norte">São Domingos do Norte</option>
+                                    <option value="São Gabriel da Palha">São Gabriel da Palha</option>
+                                    <option value="São José do Calçado">São José do Calçado</option>
+                                    <option value="São Mateus">São Mateus</option>
+                                    <option value="São Roque do Canaa">São Roque do Canaa</option>
+                                    <option value="Serra">Serra</option>
+                                    <option value="Sooterama">Sooterama</option>
+                                    <option value="Vargem Alta">Vargem Alta</option>
+                                    <option value="Venda Nova do Imigrante">Venda Nova do Imigrante</option>
+                                    <option value="Viana">Viana</option>
+                                    <option value="Vila Pavão">Vila Pavão</option>
+                                    <option value="Vila Valério">Vila Valério</option>
+                                    <option value="Vila Velha">Vila Velha</option>
+                                    <option value="Vitória">Vitória</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">CEP:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtCep"
+                                    value="{{ sql_pesq['cep'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Estado:</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control required_assistido" id="txtEstado"
+                                    value="{{ sql_pesq['uf'] }}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Data do Cadastro:</label>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control required_assistido" id="txtDataCadastro"
+                                    value="{{ sql_pesq['dt_cadastro'] }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="col-md-12 col-form-label">Hora do Cadastro:</label>
+                            <div class="col-md-12">
+                                <input type="time" class="form-control required_assistido" id="txtHoraCadastro"
+                                    value="{{ sql_pesq['hr_cadastro'] }}">
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row" id='btn_acao'>
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-danger">Cancelar</button>
+                            <button type="button" class="btn btn-primary" onclick="alterAssistido();">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

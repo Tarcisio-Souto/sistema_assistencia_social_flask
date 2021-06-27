@@ -1,0 +1,58 @@
+<form id='registro_agendamento'>
+
+    <input type="hidden" class="form-control" id="txtId" value="{{ sql_pesq['id'] }}">
+
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label>
+        <div class="col-md-12">
+            <input type="text" class="form-control required_agendamento" id="txtNome" value="{{ sql_pesq['nome'] }}" disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <label class="mr-sm-2">Médico:</label>
+            <select class="custom-select required_agendamento" name='selectMedico' id="selectMedico" style="width:100%">
+                {% for func in sql_pesq_func %}                
+                    <option value="{{ func['fk_cargo'] }}">{{ func['nome_func'] }}</option>                
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="col-sm-12 col-form-label">Data de Agendamento:</label>
+                <div class="col-md-12">
+                    <input type="date" class="form-control required_agendamento" id="txtDataAgendamento">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="" class="col-md-12 col-form-label">Início:</label>
+                <div class="col-md-12">
+                    <input type="time" class="form-control required_agendamento"
+                        id="txtHoraInicio" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="" class="col-md-12 col-form-label">Fim:</label>
+                <div class="col-md-12">
+                    <input type="time" class="form-control required_agendamento"
+                        id="txtHoraFim" placeholder="">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="col-sm-12 col-form-label">Observações:</label>
+                <div class="col-md-12">
+                    <textarea class="form-control" rows="5" id="txtObservacoes" style='resize: none'></textarea>
+                </div>
+            </div>
+            <div class="col-md-6 btn-agendamento">
+                <button type="button" class="btn btn-primary" onclick="cadAgendamento();">Cadastrar</button>
+                <button type="button" class="btn btn-danger">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #17a2b8;
+    height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 400px;
+    height: 540px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+    margin-bottom: 70px;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+#btn-login {
+    width: 100%;
+}
+
+.img-login-amaes img{
+    text-align: center;
+    height: 150px;
+    width: 100px;
+    margin-bottom: -60px;
+    position: relative;
+    top: 20px;
+}
+
+#errorAlertLogin {
+    background-color: #F08080;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: -24px;
+    width: 100%;
+    margin-left: -15px;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+#login-form {
+    position: relative;
+    top:0%;
+    color: #0a0a0a!important;
+    }
+    
+#bem {
+    color: #0a0a0a!important;
+}
+    
+    
+#bem4
+{
+    color: #0a0a0a!important;
+    margin-left: 21px;
+}
+    
+    
+#bem2 {
+    color: #0a0a0a!important;
+    font-weight: 900;    
+}
+    
+    
+#bem3 {
+    color: #0a0a0a!important;
+    font-weight: 900;
+    font-size:100%;
+    margin-left: 21px;    
+}
+    
+    
+    
+#btn-login {
+    width: 100%;
+    border: none;
+    border-radius: 05px;
+    color: #FFF;
+    background-color: #08a4cc;
+}

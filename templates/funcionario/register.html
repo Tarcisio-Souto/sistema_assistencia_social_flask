@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Corrige o erro do favicon.ico -->
+
+    <link rel="icon" href="data:;base64,=">
+
+    <title>Serviço Social - AMAES</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/3d7779fa7f.js" crossorigin="anonymous"></script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/style/style.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3><img class="img-fluid" src="{{ url_for('static', filename='/images/amaes.png') }}"
+                        width="30px">AMAES</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="/home"><i class="fas fa-home"></i>Início</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><i
+                            class="fas fa-child"></i>Assistidos</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="/assistido/add">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="/assistido/search">Pesquisa</a>
+                        </li>
+                        <li>
+                            <a href="/assistido/record">Prontuário</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false"><i
+                            class="fas fa-user-tie"></i>Funcionários</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li>
+                            <a href="/funcionario/add">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="/funcionario/search">Pesquisa</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false"><i
+                            class="fas fa-user-tie"></i>Agendamento</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li>
+                            <a href="/agendamento/add">Agendar</a>
+                        </li>
+                        <li>
+                            <a href="/agendamento/search">Pesquisa</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/contacts"><i class="fas fa-address-book"></i>Contatos</a>
+                </li>
+                <li>
+                    <a href="/about"><i class="fas fa-info-circle"></i>Sobre</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Sair</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info sidebarCollapse">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                    <p id='titulo_pagina1'><i id='titulo_pagina2' class="fas fa-user-plus"></i>Cadastro de Funcionário
+                    </p>
+                </div>
+            </nav>
+
+            <!-- Mensagens Cadastro Funcionário -->
+
+            <br>
+            <div id="successAlert" role="alert" style="display: none"></div>
+            <div id="errorAlert" role="alert" style="display: none"></div>
+            <br>
+
+            <section id="form-add-user">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <form id='form_cad_func' method="POST">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control required_func" name="txtNome" id="txtNome" placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="inputPassword3" class="col-sm-2 col-form-label">CPF:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtCpf' id="txtCpf" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPassword3" class="col-sm-2 col-form-label">RG:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtRg' id="txtRg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputPassword3" class="col-md-12 col-form-label">Data de
+                                                Nascimento:</label>
+                                            <div class="col-md-12">
+                                                <input type="date" class="form-control required_func" name='txtDataNasc'
+                                                    id="txtDataNasc">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputPassword3" class="col-md-12 col-form-label">Idade:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtIdade' id="txtIdade"
+                                                    onmouseover="calculaIdade();" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2" for="selectCargo">Sexo:</label>
+                                                <select class="custom-select mr-sm-2 required_func" name='selectCargo'
+                                                    id="selectSexo">
+                                                    <option selected>Selecione</option>
+                                                    <option value="Masculino">Masculino</option>
+                                                    <option value="Feminino">Feminino</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2" for="selectCargo">Cargo:</label>
+                                                <select class="custom-select mr-sm-2 required_func" name='selectCargo'
+                                                    id="selectCargo">
+                                                    <option selected>Selecione o cargo</option>
+                                                    <option value="1">Assistente Social</option>
+                                                    <option value="2">Recepcionista</option>
+                                                    <option value="3">Médico</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Celular:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtCelular'
+                                                    id="txtCelular" placeholder="(27) 99999-9999">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Recado:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtRecado' id="txtRecado"
+                                                    placeholder="(27) 3322-9096">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Logradouro:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtLogradouro'
+                                                    id="txtLogradouro" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Número:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtNumero' id="txtNumero"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Bairro:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtBairro' id="txtBairro"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2" for="selectCargo">Município:</label>
+                                                <select class="custom-select mr-sm-2 required_assistido"
+                                                    name='txtMunicipio' id="txtMunicipio">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="Afonso Cláudio">Afonso Cláudio</option>
+                                                    <option value="Água Doce do Norte">Água Doce do Norte</option>
+                                                    <option value="Águia Branca">Águia Branca</option>
+                                                    <option value="Alegre">Alegre</option>
+                                                    <option value="Alfredo Chaves">Alfredo Chaves</option>
+                                                    <option value="Alto Rio Novo">Alto Rio Novo</option>
+                                                    <option value="Anchieta">Anchieta</option>
+                                                    <option value="Apiacá">Apiacá</option>
+                                                    <option value="Aracruz">Aracruz</option>
+                                                    <option value="Atílio Vivacqua">Atílio Vivacqua</option>
+                                                    <option value="Baixo Guandu">Baixo Guandu</option>
+                                                    <option value="Barra de São Francisco">Barra de São Francisco</option>
+                                                    <option value="Boa Esperança">Boa Esperança</option>
+                                                    <option value="Bom Jesus do Norte">Bom Jesus do Norte</option>
+                                                    <option value="Brejetuba">Brejetuba</option>
+                                                    <option value="Cachoeiro de Itapemirim">Cachoeiro de Itapemirim</option>
+                                                    <option value="Cariacica">Cariacica</option>
+                                                    <option value="Castelo">Castelo</option>
+                                                    <option value="Colatina">Colatina</option>
+                                                    <option value="Conceicão da Barra">Conceicão da Barra</option>
+                                                    <option value="Conceição do Castelo">Conceição do Castelo</option>
+                                                    <option value="Divino de São Lourenço">Divino de São Lourenço</option>
+                                                    <option value="Domingos Martins">Domingos Martins</option>
+                                                    <option value="Dores do Rio Preto">Dores do Rio Preto</option>
+                                                    <option value="Ecoporanga">Ecoporanga</option>
+                                                    <option value="Fundão">Fundão</option>
+                                                    <option value="Guaçuí">Guaçuí</option>
+                                                    <option value="Guarapari">Guarapari</option>
+                                                    <option value="Ibatiba">Ibatiba</option>
+                                                    <option value="Ibiraçú">Ibiraçú</option>
+                                                    <option value="Ibitirama">Ibitirama</option>
+                                                    <option value="Iconha">Iconha</option>
+                                                    <option value="Irupi">Irupi</option>
+                                                    <option value="Itaguaçu">Itaguaçu</option>
+                                                    <option value="Itapemirim">Itapemirim</option>
+                                                    <option value="Itarana">Itarana</option>
+                                                    <option value="Iúna">Iúna</option>
+                                                    <option value="Jaguaré">Jaguaré</option>
+                                                    <option value="Jerônimo Monteiro">Jerônimo Monteiro</option>
+                                                    <option value="João Neiva">João Neiva</option>
+                                                    <option value="Laranja da Terra">Laranja da Terra</option>
+                                                    <option value="Linhares">Linhares</option>
+                                                    <option value="Mantenópolis">Mantenópolis</option>
+                                                    <option value="Marataízes">Marataízes</option>
+                                                    <option value="Marechal Floriano">Marechal Floriano</option>
+                                                    <option value="Marilândia">Marilândia</option>
+                                                    <option value="Mimoso do Sul">Mimoso do Sul</option>
+                                                    <option value="Montanha">Montanha</option>
+                                                    <option value="Mucuriri">Mucuriri</option>
+                                                    <option value="Muniz Freire">Muniz Freire</option>
+                                                    <option value="Muqui">Muqui</option>
+                                                    <option value="Nova Venécia">Nova Venécia</option>
+                                                    <option value="Pancas">Pancas</option>
+                                                    <option value="Pedro Canário">Pedro Canário</option>
+                                                    <option value="Pinheiros">Pinheiros</option>
+                                                    <option value="Piúma">Piúma</option>
+                                                    <option value="Ponto Belo">Ponto Belo</option>
+                                                    <option value="Presidente Kennedy">Presidente Kennedy</option>
+                                                    <option value="Rio Bananal">Rio Bananal</option>
+                                                    <option value="Rio Novo do Sul">Rio Novo do Sul</option>
+                                                    <option value="Santa Leopoldina">Santa Leopoldina</option>
+                                                    <option value="Santa Maria de Jetiba">Santa Maria de Jetiba</option>
+                                                    <option value="Santa Teresa">Santa Teresa</option>
+                                                    <option value="São Domingos do Norte">São Domingos do Norte</option>
+                                                    <option value="São Gabriel da Palha">São Gabriel da Palha</option>
+                                                    <option value="São José do Calçado">São José do Calçado</option>
+                                                    <option value="São Mateus">São Mateus</option>
+                                                    <option value="São Roque do Canaa">São Roque do Canaa</option>
+                                                    <option value="Serra">Serra</option>
+                                                    <option value="Sooterama">Sooterama</option>
+                                                    <option value="Vargem Alta">Vargem Alta</option>
+                                                    <option value="Venda Nova do Imigrante">Venda Nova do Imigrante</option>
+                                                    <option value="Viana">Viana</option>
+                                                    <option value="Vila Pavão">Vila Pavão</option>
+                                                    <option value="Vila Valério">Vila Valério</option>
+                                                    <option value="Vila Velha">Vila Velha</option>
+                                                    <option value="Vitória">Vitória</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">CEP:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtCep' id="txtCep"
+                                                    placeholder="29024-119">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Estado:</label>
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control required_func" name='txtEstado' id="txtEstado"
+                                                    value="ES" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="" class="col-md-12 col-form-label">Senha:</label>
+                                            <div class="col-md-12">
+                                                <input type="password" class="form-control required_func" name='txtSenha'
+                                                    id="txtSenha" placeholder="">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <br><br>
+                                    <div class="row" id='btn_acao'>
+                                        <div class="col-md-12">
+                                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" onclick="cadFunc();">Cadastrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src='/static/javascript/jquery.3.5.1.js'></script>
+
+
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <!-- Fim menu -->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src='/static/javascript/funcoes.js'></script>
+   
+    <!-- JQuery Mask -->
+    <script type="text/javascript" src='/static/javascript/jquery.mask.min.js'></script>
+
+    <!-- Ajax -->
+    <script type="text/javascript" src='/static/javascript/funcoesAjax.js'></script>
+
+
+</body>
+
+</html>
